@@ -1,54 +1,88 @@
-<%@page import="java.util.Scanner"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<%@page import="java.sql.*"%>
-<!-- insert.jsp DB에 정보를 집어넣는 페이지 -->
-<!-- Oracle의 TEST테이블에 정보를 집어넣는 것이 목표이다. -->
+    pageEncoding="EUC-KR"%>
+<!-- send.jsp : 데이터 전송 페이지 -->
 <html>
-	<head>
-		<title>보내는 페이지</title>
-	</head>
+<head>
+<title>메인 페이지</title>
+</head>
 <body>
-	<div align = "center">
-		<h1>회원 가입</h1>
-		<form action="insert.jsp" method="post">
-			
-			이름 : <input type ="text" name = "name"><br>
-			
-			성별 : <select name = "gender">
-				<option value = "남자">남자
-				<option value = "여자">여자
-			</select>
-			<br>
-			<!-- 전송 버튼 -->
-			<input type="submit" value="가입">
+<div align="center">
 	
-		</form>
-		
-		<h1>회원 목록</h1>
-		<form action="list.jsp" method="post">
-			<input type="submit" value="목록보기">
-
-		</form>
-		
-		<h1>회원 삭제</h1>
-		<form action="delete.jsp" method="post">
-			
-			이름 : <input type ="text" name = "name"><br>
-			<!-- 전송 버튼 -->
-			<input type="submit" value="삭제">
-			
-		</form>
-		
-		<h1>회원 검색</h1>
-		<form action="search.jsp" method="post">
+	<h1>회원 가입하기</h1>
+	<form action="insert.jsp" method="post">
+		<!-- 이름, 성별을 입력받아 전송 -->
+		<table border="1">
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name">
+				</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<select name="gender">
+						<option value="남자">남자
+						<option value="여자">여자
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2'">
+					<input type="submit" value="가입">
+				</th>
+			</tr>
+		</table>
+	</form>
 	
-			이름 : <input type ="text" name = "name"><br>
-			
-			<!-- 전송 버튼 -->
-			<input type="submit" value="검색">
-		</form>
-		
-	</div>
+	<br>
+	<h1>회원 목록보기</h1>
+	<a href="list.jsp">리스트 페이지로 이동</a>
+	
+	<br>
+	<h1>회원 삭제하기</h1>
+	<form action="delete.jsp" method="post">
+		<!-- 이름 입력받아 전송 -->
+		<table border="1">
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name">
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2'">
+					<input type="submit" value="삭제">
+				</th>
+			</tr>
+		</table>
+	</form>
+	
+	<br>
+	<h1>회원 검색하기</h1>
+	<form action="search.jsp" method="post">
+		<!-- 이름 입력받아 전송 -->
+		<table border="1">
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name">
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2'">
+					<input type="submit" value="검색">
+				</th>
+			</tr>
+		</table>
+	</form>	
+	
+</div>
 </body>
 </html>
+
+
+
+
+
+
